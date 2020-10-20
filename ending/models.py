@@ -8,12 +8,13 @@ from otree.api import (
     Currency as c,
     currency_range,
 )
+import time
 
 
-author = 'Your name here'
+author = 'Kyubum Moon <mailto: moonx190@umn.edu>'
 
 doc = """
-Your app description
+보건복지부 행동강화 물품 연구 
 """
 
 
@@ -32,4 +33,12 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    embrain_response = models.StringField()
+    elapsed_time_seconds = models.IntegerField()
+
+    def get_elapsed_time_seconds(self):
+        start_time = self.particiapnt.vars['start_time']
+        current_time = time.time()
+        elapsed_time = current_time - start_time
+        return int(elapsed_time)
+

@@ -58,7 +58,7 @@ SESSION_CONFIGS = [
         "app_sequence": [
             "introduction_d",
             "online_survey",
-
+            "ending",
         ]
     },
     # {
