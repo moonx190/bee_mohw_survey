@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    스트룹 검사
+{% endblock %}
+
+{% block app_scripts %}
+    <script>
+
+    $(document).keydown(function(event){
+        if (event.which === {{ Constants.META_KEYCODE }}){
+            $("#form").submit();
+        }
+    });
+
+    </script>
+{% endblock %}
+
+{% block content %}
+        <div class = "row alert alert-danger">
+            <h4>
+                <ul>
+                    <li>본 검사는 {{ Constants.num_rounds }} 차례에 걸쳐 이루어집니다. </li>
+                    <li>각 검사마다 응답 방법이 조금씩 다르므로 설명에 주의하여 응답해주시기 바랍니다. </li>
+                    <li>준비가 되셨으면 버튼을 눌러 첫번째 검사를 진행해 주시기 바랍니다.</li>
+                </ul>
+            </h4>
+        </div>
+       <div class = "row">
+            <h2>
+                <button class="btn btn-primary btn-large active">
+                   준비되셨으면 이 버튼을 눌러주십시오.
+                </button>
+            </h2>
+        </div>
+
+
+{% endblock %}
