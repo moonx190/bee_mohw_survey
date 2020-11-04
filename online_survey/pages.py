@@ -422,7 +422,8 @@ class online_survey_14(Page):
         return self.player.vars_for_template()
 
 #online_survey_1 not shown
-page_sequence = [online_survey_2, online_survey_3, online_survey_4, online_survey_5_1,
+#online_survey_2 is done from embrain server (screening question)
+page_sequence = [online_survey_3, online_survey_4, online_survey_5_1,
                  online_survey_5_2, online_survey_5_3, online_survey_5_4, online_survey_6_1, online_survey_6_2,
                  online_survey_6_3, online_survey_6_4, online_survey_7_1, online_survey_7_2, online_survey_7_3,online_survey_7_4,
                  online_survey_8, online_survey_9, online_survey_10, online_survey_11, online_survey_12,

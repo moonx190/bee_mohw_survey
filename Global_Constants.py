@@ -11,7 +11,7 @@ class GlobalConstants:
     # EXTERNAL_URL_PRODUCTION = 'http://survey.panel.co.kr/2019/80634/m5.asp+'  # reserved
     EXTERNAL_URL_PRODUCTION = 'https://survey.panel.co.kr/2020/87868/m15.asp'  # reserved
 
-    IS_TEST = False
+    IS_TEST = True
 
     DEFAULT_PANEL_ID = "NO_PANEL_ID"
 

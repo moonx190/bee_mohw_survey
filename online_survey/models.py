@@ -343,13 +343,13 @@ class Player(BasePlayer):
     )
 
     overall_health_evaluation = models.IntegerField(
-        label="귀하가 생각하는 본인의 현재 건강상태는 어떻습니까?",
+        label="귀하가 생각하는 본인의 현재 건강상태는 어떻습니까? (숫자가 높을수록 건강함)",
         choices=range(0, 11),
         widget=widgets.RadioSelectHorizontal,
         blank=True,
     )
     overall_stress_evaluation = models.IntegerField(
-        label="평소 귀하의 스트레스 정도는 어떻습니까?",
+        label="평소 귀하의 스트레스 정도는 어떻습니까? (숫자가 높을수록 스트레스 높음)",
         choices=range(0, 11),
         widget=widgets.RadioSelectHorizontal,
         blank=True,
@@ -611,36 +611,38 @@ class Player(BasePlayer):
     liquid_cigarette_start_year = models.IntegerField(
         label="",
         choices=range(2000,int(datetime.now().strftime('%Y'))+1),
-        blank=True,
+        # blank=True,
     )
 
     liquid_cigarette_start_month = models.IntegerField(
         label="",
-        choices=range(1, int(datetime.now().strftime('%m'))+1),
-        blank=True,
+        # choices=range(1, int(datetime.now().strftime('%m'))+1),
+        choices=range(1,13),
+        # blank=True,
     )
 
     liquid_cigarette_end_year = models.IntegerField(
         label = "",
         choices = range(2000, int(datetime.now().strftime('%Y')) + 1),
-        blank = True,
+        # blank = True,
     )
     liquid_cigarette_end_month = models.IntegerField(
         label="",
-        choices=range(1, int(datetime.now().strftime('%m'))+1),
-        blank=True,
+        # choices=range(1, int(datetime.now().strftime('%m'))+1),
+        choices=range(1,13),
+        # blank=True,
     )
 
     most_recent_month_liquid_cigarette_use_days = models.IntegerField(
         label="최근 1달 간 액상형 전자담배(쥴, 탱크형 등) 사용일수",
         choices=range(1, 31),
-        blank=True,
+        # blank=True,
     )
 
     liquid_amount_of_liquid_cigarette_recent_week = models.IntegerField(
         label="",
         choices=range(101),
-        blank=True,
+        # blank=True,
     )
 
     liquid_cigarette_density = models.IntegerField(
@@ -784,35 +786,37 @@ class Player(BasePlayer):
     tobacco_type_e_cigarette_start_year = models.IntegerField(
         label="",
         choices=range(2000, int(datetime.now().strftime('%Y')) + 1),
-        blank=True,
+        # blank=True,
     )
     tobacco_type_e_cigarette_start_month = models.IntegerField(
         label="",
-        choices=range(1, int(datetime.now().strftime('%m')) + 1),
-        blank=True,
+        # choices=range(1, int(datetime.now().strftime('%m')) + 1),
+        choices=range(1, 13),
+        # blank=True,
     )
 
     tobacco_type_e_cigarette_end_year = models.IntegerField(
         label="",
         choices=range(2000, int(datetime.now().strftime('%Y')) + 1),
-        blank=True,
+        # blank=True,
     )
     tobacco_type_e_cigarette_end_month = models.IntegerField(
         label="",
-        choices=range(1, int(datetime.now().strftime('%m')) + 1),
-        blank=True,
+        # choices=range(1, int(datetime.now().strftime('%m')) + 1),
+        choices=range(1, 13),
+        # blank=True,
     )
 
     within_recent_month_days_of_use_for_tobacco_type_e_cigarette = models.IntegerField(
         label="",
         choices=range(1, 31),
-        blank=True,
+        # blank=True,
     )
 
     tobacco_type_e_cigarette_avg_sticks_per_day = models.IntegerField(
         label="",
         choices=range(1, 101),
-        blank=True,
+        # blank=True,
     )
 
     tobacco_type_e_cigarette_hardest_to_resist_when_1 = models.BooleanField(
@@ -946,7 +950,7 @@ class Player(BasePlayer):
         choices=[
             [1, "1개월내 금연할 계획이 있음"],
             [2, "6개월내 금연할 계획이 있음"],
-            [3, "6개월내 아니지만 언젠가 금연생각 있음"],
+            [3, "6개월내는 아니지만 언젠가 금연생각 있음"],
             [4, "현재 전혀 금연 생각 없음"],
             [5, "현재 금연중임"],
         ],
